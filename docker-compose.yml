@@ -1,31 +1,18 @@
 version: '3.8'
 
 services:
-  postgres:
-    image: postgres:15-alpine
-    container_name: pj_postgres
-    environment:
-      POSTGRES_USER: ${DB_USER:-postgres}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-password}
-      POSTGRES_DB: ${DB_NAME:-pj_residence}
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5433:5432"
-    networks:
-      - pj-network
-
   server:
     build: ./server
     container_name: pj_server
-    depends_on:
-      - postgres
+    # Allow container to talk to host machine via 'host.docker.internal'
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     environment:
       - DB_USER=${DB_USER:-postgres}
       - DB_PASSWORD=${DB_PASSWORD:-password}
-      - DB_HOST=postgres
-      - DB_PORT=5432
-      - DB_NAME=${DB_NAME:-pj_residence}
+      - DB_HOST=${DB_HOST:-host.docker.internal}
+      - DB_PORT=${DB_PORT:-5432}
+      - DB_NAME=${DB_NAME:-pjresidence_db}
       - EMAIL_USER=${EMAIL_USER}
       - EMAIL_PASS=${EMAIL_PASS}
     ports:
@@ -42,9 +29,6 @@ services:
       - "80:80"
     networks:
       - pj-network
-
-volumes:
-  postgres_data:
 
 networks:
   pj-network:

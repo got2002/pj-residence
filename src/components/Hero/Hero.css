@@ -1,0 +1,328 @@
+/* ==========================================
+   HERO SECTION STYLES
+   ========================================== */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 40px;
+}
+
+/* Background Slides */
+.hero__slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.hero__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: opacity 1s ease, transform 6s ease;
+}
+
+.hero__slide--active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Fallback background gradient */
+.hero__slide {
+    background-color: var(--color-dark);
+    background-image: linear-gradient(135deg, var(--color-dark-brown) 0%, var(--color-dark) 50%, #0a0a0a 100%);
+}
+
+/* Content */
+.hero__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 var(--space-xl);
+    margin-top: auto;
+    margin-bottom: var(--space-2xl);
+    width: 100%;
+}
+
+.hero__text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero__welcome {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    font-style: italic;
+    color: var(--color-gold-light);
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-md);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-7xl);
+    font-weight: 700;
+    color: var(--color-white);
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-lg);
+    text-shadow: 0 4px 60px rgba(0, 0, 0, 0.8);
+}
+
+.hero__divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+    margin: 0 auto var(--space-xl);
+}
+
+.hero__description {
+    font-size: var(--text-lg);
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto var(--space-2xl);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero__buttons {
+    display: flex;
+    gap: var(--space-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Slide Indicators */
+.hero__indicators {
+    position: absolute;
+    left: var(--space-xl);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    z-index: 3;
+}
+
+.hero__indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: transparent;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.hero__indicator:hover {
+    border-color: var(--color-gold);
+}
+
+.hero__indicator--active {
+    background: var(--color-gold);
+    border-color: var(--color-gold);
+    transform: scale(1.2);
+}
+
+/* Scroll Indicator */
+.hero__scroll {
+    position: absolute;
+    right: var(--space-xl);
+    bottom: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    z-index: 3;
+}
+
+.hero__scroll span {
+    font-size: var(--text-xs);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+}
+
+.hero__scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--color-gold), transparent);
+    animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scaleY(0.5);
+    }
+}
+
+/* Booking Widget */
+.hero__booking {
+    position: relative;
+    margin-bottom: var(--space-xl);
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-lg);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    z-index: 3;
+    background: rgb(26 26 26 / 41%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(201, 169, 98, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.hero__booking-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.hero__booking-item label {
+    font-size: var(--text-xs);
+    font-weight: 500;
+    color: var(--color-gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.hero__booking-item input,
+.hero__booking-item select {
+    padding: var(--space-sm) var(--space-md);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-white);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-sm);
+    outline: none;
+    transition: all var(--transition-fast);
+    min-width: 140px;
+}
+
+.hero__booking-item input:focus,
+.hero__booking-item select:focus {
+    border-color: var(--color-gold);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.hero__booking-item select option {
+    background: var(--color-dark);
+    color: var(--color-white);
+}
+
+.hero__booking-btn {
+    white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .hero__booking {
+        flex-wrap: wrap;
+        max-width: 90%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero__indicators {
+        left: var(--space-md);
+    }
+
+    .hero__scroll {
+        display: none;
+    }
+
+    .hero__title {
+        font-size: var(--text-5xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 80px;
+        text-align: center;
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+    }
+
+    .hero__content {
+        width: 100%;
+        text-align: center;
+        margin-bottom: var(--space-lg);
+    }
+
+    .hero__buttons {
+        justify-content: center;
+    }
+
+    .hero__booking {
+        width: 100%;
+        max-width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--space-sm);
+    }
+
+    .hero__booking-item {
+        width: auto;
+        flex: 1 1 45%;
+        /* Allow 2 items per row */
+    }
+
+    .hero__booking-btn {
+        width: auto;
+        flex: 1 1 100%;
+        /* Button takes full width or wrap nicely */
+        margin-top: var(--space-sm);
+    }
+
+    /* Override input widths from previous specific mobile styles if needed */
+    .hero__booking-item input,
+    .hero__booking-item select {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hero__title {
+        font-size: var(--text-6xl);
+        /* Increased to 6xl */
+    }
+
+    .hero__indicators,
+    .hero__scroll {
+        display: none;
+    }
+}

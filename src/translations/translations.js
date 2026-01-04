@@ -25,7 +25,7 @@ const translations = {
         hero: {
             slides: [
                 {
-                    title: '',
+                    title: 'ยินดีต้อนรับสู่',
                     subtitle: 'PJ-Residence',
                     description: 'สัมผัสประสบการณ์การพักผ่อนระดับพรีเมียม ท่ามกลางบรรยากาศที่งดงามและการบริการระดับ 5 ดาว',
                     cta: 'สำรวจห้องพัก'

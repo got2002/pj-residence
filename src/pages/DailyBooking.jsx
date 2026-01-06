@@ -59,18 +59,18 @@ const DailyBooking = () => {
                 priceUnit: 'บาท/คืน',
                 popular: false,
                 pricing: [
-                    { label: 'ค่าประกันห้อง', value: '1,000 บาท (1 คืน)', icon: '🔐' }
+                    { label: 'ค่าประกันห้อง', value: '1,000 บาท (1 คืน)' }
                 ],
                 amenities: [
-                    { label: 'WiFi', value: 'ฟรี', icon: '📶' },
-                    { label: 'ทำความสะอาด ทุกวัน', icon: '🧹' },
-                    { label: 'เฟอร์นิเจอร์ครบครัน', icon: '🛋️' },
-                    { label: 'เครื่องปรับอากาศ', icon: '❄️' },
-                    { label: 'กาแฟและเครื่องดื่ม ฟรี', icon: '☕' },
-                    { label: 'ทีวี', icon: '📺' },
-                    { label: 'เครื่องทำน้ำอุ่น', icon: '🚿' },
-                    { label: 'ไมโครเวฟ', icon: '🍳' },
-                    { label: 'ตู้เย็น', icon: '🧃' }
+                    { label: 'WiFi', value: 'ฟรี' },
+                    { label: 'ทำความสะอาด ทุกวัน' },
+                    { label: 'เฟอร์นิเจอร์ครบครัน' },
+                    { label: 'เครื่องปรับอากาศ' },
+                    { label: 'กาแฟและเครื่องดื่ม ฟรี' },
+                    { label: 'ทีวี' },
+                    { label: 'เครื่องทำน้ำอุ่น' },
+                    { label: 'ไมโครเวฟ' },
+                    { label: 'ตู้เย็น' }
                 ]
             }
         ],
@@ -82,18 +82,18 @@ const DailyBooking = () => {
                 priceUnit: 'THB/night',
                 popular: false,
                 pricing: [
-                    { label: 'Room Deposit', value: '1,000 THB (1 night)', icon: '🔐' }
+                    { label: 'Room Deposit', value: '1,000 THB (1 night)' }
                 ],
                 amenities: [
-                    { label: 'WiFi', value: 'Free', icon: '📶' },
-                    { label: 'Daily Cleaning', icon: '🧹' },
-                    { label: 'Fully Furnished', icon: '🛋️' },
-                    { label: 'Air Conditioning', icon: '❄️' },
-                    { label: 'Coffee & Drinks Free', icon: '☕' },
-                    { label: 'TV', icon: '📺' },
-                    { label: 'Water Heater', icon: '🚿' },
-                    { label: 'Microwave', icon: '🍳' },
-                    { label: 'Refrigerator', icon: '🧃' }
+                    { label: 'WiFi', value: 'Free' },
+                    { label: 'Daily Cleaning' },
+                    { label: 'Fully Furnished' },
+                    { label: 'Air Conditioning' },
+                    { label: 'Coffee & Drinks Free' },
+                    { label: 'TV' },
+                    { label: 'Water Heater' },
+                    { label: 'Microwave' },
+                    { label: 'Refrigerator' }
                 ]
             }
         ],
@@ -105,18 +105,18 @@ const DailyBooking = () => {
                 priceUnit: '泰铢/晚',
                 popular: false,
                 pricing: [
-                    { label: '押金', value: '1,000 泰铢 (1晚)', icon: '🔐' }
+                    { label: '押金', value: '1,000 泰铢 (1晚)' }
                 ],
                 amenities: [
-                    { label: 'WiFi', value: '免费', icon: '📶' },
-                    { label: '每天清洁', icon: '🧹' },
-                    { label: '家具齐全', icon: '🛋️' },
-                    { label: '空调', icon: '❄️' },
-                    { label: '咖啡和饮料 免费', icon: '☕' },
-                    { label: '电视', icon: '📺' },
-                    { label: '热水器', icon: '🚿' },
-                    { label: '微波炉', icon: '🍳' },
-                    { label: '冰箱', icon: '🧃' }
+                    { label: 'WiFi', value: '免费' },
+                    { label: '每天清洁' },
+                    { label: '家具齐全' },
+                    { label: '空调' },
+                    { label: '咖啡和饮料 免费' },
+                    { label: '电视' },
+                    { label: '热水器' },
+                    { label: '微波炉' },
+                    { label: '冰箱' }
                 ]
             }
         ]
@@ -425,7 +425,6 @@ const DailyBooking = () => {
                                                             <ul className="booking-room-option__pricing">
                                                                 {room.pricing.map((item, idx) => (
                                                                     <li key={idx}>
-                                                                        <span className="pricing-icon">{item.icon}</span>
                                                                         <span className="pricing-label">{item.label}:</span>
                                                                         <span className="pricing-value">{item.value}</span>
                                                                     </li>
@@ -437,8 +436,8 @@ const DailyBooking = () => {
                                                             <ul className="booking-room-option__amenities">
                                                                 {room.amenities.map((item, idx) => (
                                                                     <li key={idx}>
-                                                                        <span className="amenity-icon">{item.icon}</span>
                                                                         <span className="amenity-label">{item.label}</span>
+                                                                        {item.value && <span className="amenity-value"> ({item.value})</span>}
                                                                     </li>
                                                                 ))}
                                                             </ul>

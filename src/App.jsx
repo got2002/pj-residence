@@ -9,19 +9,24 @@ import Booking from './pages/Booking';
 import DailyBooking from './pages/DailyBooking.jsx';
 import Admin from './pages/Admin.jsx';
 
+import ScrollToTop from './components/ScrollToTop';
+
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/rooms" element={<Rooms />} />
-      <Route path="/facilities" element={<Facilities />} />
-      <Route path="/nearby" element={<Nearby />} />
-      <Route path="/gallery" element={<Gallery />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/booking" element={<Booking />} />
-      <Route path="/daily-booking" element={<DailyBooking />} />
-      <Route path="/admin" element={<Admin />} />
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/rooms" element={<Rooms />} />
+        <Route path="/facilities" element={<Facilities />} />
+        <Route path="/nearby" element={<Nearby />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/daily-booking" element={<DailyBooking />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
+    </>
   );
 }
 

@@ -99,7 +99,7 @@ const Footer = () => {
                                 <path d="M12 2C6.48 2 2 5.58 2 10c0 2.03.94 3.87 2.47 5.26V20l4.24-2.33c1.08.3 2.17.33 3.29.33 5.52 0 10-3.58 10-8s-4.48-8-10-8z" />
                             </svg>
                         </a>
-                        <a href="https://www.facebook.com/" className="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.facebook.com/PJResidence38/" className="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                             </svg>

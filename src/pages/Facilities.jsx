@@ -5,7 +5,8 @@ import './Facilities.css';
 
 const Facilities = () => {
     const { t } = useLanguage();
-    const allFacilities = t('facilitiesPage.categories');
+    const facilitiesData = t('facilitiesPage.categories');
+    const allFacilities = Array.isArray(facilitiesData) ? facilitiesData : [];
 
     return (
         <div className="facilities-page">
@@ -31,14 +32,12 @@ const Facilities = () => {
                             {allFacilities.map((group, index) => (
                                 <div key={index} className="facilities-all__category">
                                     <div className="facilities-all__category-header">
-                                        <span className="facilities-all__category-icon">{group.icon}</span>
                                         <h3 className="facilities-all__category-title">{group.category}</h3>
                                     </div>
                                     <ul className="facilities-all__list">
                                         {group.items.map((item, i) => (
                                             <li key={i} className="facilities-all__item">
-                                                <span className="facilities-all__check">✓</span>
-                                                <span>{item}</span>
+                                                <span className="facilities-all__text">{item}</span>
                                             </li>
                                         ))}
                                     </ul>

@@ -72,15 +72,13 @@ const Gallery = () => {
                                 className={`gallery-tab ${activeTab === 'overview' ? 'gallery-tab--active' : ''}`}
                                 onClick={() => setActiveTab('overview')}
                             >
-                                <span className="gallery-tab__icon">🏨</span>
-                                <span className="gallery-tab__text">{t('galleryPage.tabs.overview')}</span>
+                                <span className="gallery-tab__text">🏨 {t('galleryPage.tabs.overview')}</span>
                             </button>
                             <button
                                 className={`gallery-tab ${activeTab === 'rooms' ? 'gallery-tab--active' : ''}`}
                                 onClick={() => setActiveTab('rooms')}
                             >
-                                <span className="gallery-tab__icon">🛏️</span>
-                                <span className="gallery-tab__text">{t('galleryPage.tabs.rooms')}</span>
+                                <span className="gallery-tab__text">🛏️ {t('galleryPage.tabs.rooms')}</span>
                             </button>
                         </div>
 

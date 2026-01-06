@@ -48,7 +48,6 @@ const AboutUs = () => {
                         <div className="about__features">
                             {features.map((feature, index) => (
                                 <div key={index} className="about__feature">
-                                    <span className="about__feature-icon">{feature.icon}</span>
                                     <span className="about__feature-text">{feature.text}</span>
                                 </div>
                             ))}

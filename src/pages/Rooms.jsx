@@ -62,7 +62,6 @@ const Rooms = () => {
                                 <div className="rooms-details__amenities">
                                     {amenities.map((amenity, index) => (
                                         <div key={index} className="rooms-details__amenity">
-                                            <span className="rooms-details__amenity-icon">{amenity.icon}</span>
                                             <span className="rooms-details__amenity-text">{amenity.name}</span>
                                         </div>
                                     ))}
@@ -103,8 +102,7 @@ const Rooms = () => {
                         <h3 className="rooms-details__amenities-title" style={{ marginTop: 'var(--space-3xl)' }}>{t('roomsPage.commonAreaTitle')}</h3>
                         <div className="rooms-facilities__grid">
                             {facilities.map((facility, index) => (
-                                <div key={index} className="rooms-facilities__card" style={{ background: 'var(--color-cream)' }}>
-                                    <span className="rooms-facilities__icon">{facility.icon}</span>
+                                <div key={index} className="rooms-facilities__card">
                                     <h3 className="rooms-facilities__title">{facility.title}</h3>
                                     <p className="rooms-facilities__description">{facility.description}</p>
                                 </div>

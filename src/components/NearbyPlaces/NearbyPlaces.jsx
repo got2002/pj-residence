@@ -9,41 +9,87 @@ const NearbyPlaces = () => {
             id: 1,
             icon: '🛍️',
             items: [
-                { name: 'Central Rattanathibet', distance: '2.8 Km.' },
-                { name: 'Owl Night Market', distance: '3 Km.' },
-                { name: 'Esplanade', distance: '5 Km.' }
+                {
+                    nameTh: 'ตลาดนัดสนามบินน้ำ', nameEn: 'Sanambin Nam Market', nameCn: 'Sanambin Nam Market',
+                    time: { th: '1 นาที', en: '1 Min', cn: '1 分钟' }
+                },
+                {
+                    nameTh: 'เซ็นทรัล นอร์ทวิลล์', nameEn: 'Central Northville', nameCn: 'Central Northville',
+                    time: { th: '5 นาที', en: '5 Mins', cn: '5 分钟' }
+                },
+                {
+                    nameTh: 'เอสพลานาด', nameEn: 'Esplanade', nameCn: 'Esplanade',
+                    time: { th: '8 นาที', en: '8 Mins', cn: '8 分钟' }
+                }
             ]
         },
         {
             id: 2,
             icon: '🚇',
             items: [
-                { name: 'Pink Line MRT', distance: '1.6 Km.' },
-                { name: 'BTS Violet Line', distance: '4.5 Km.' },
-                { name: 'Nonthaburi Pier', distance: '8.2 Km.' }
+                {
+                    nameTh: 'รถไฟฟ้าสายสีชมพู', nameEn: 'Pink Line MRT', nameCn: 'Pink Line MRT',
+                    time: { th: '5 นาที', en: '5 Mins', cn: '5 分钟' }
+                },
+                {
+                    nameTh: 'รถไฟฟ้าสายสีม่วง', nameEn: 'Purple Line MRT', nameCn: 'Purple Line MRT',
+                    time: { th: '11 นาที', en: '11 Mins', cn: '11 分钟' }
+                },
+                {
+                    nameTh: 'ท่าน้ำนนท์', nameEn: 'Nonthaburi Pier', nameCn: 'Nonthaburi Pier',
+                    time: { th: '13 นาที', en: '13 Mins', cn: '13 分钟' }
+                }
             ]
         },
         {
             id: 3,
             icon: '🏛️',
             items: [
-                { name: 'Ministry of Commerce', distance: '4 Km.' },
-                { name: 'Gov. Lottery Office', distance: '600 M.' },
-                { name: 'Nonthaburi Civic Center', distance: '4.6 Km.' }
+                {
+                    nameTh: 'สำนักงานสลากกินแบ่งรัฐบาล', nameEn: 'Gov. Lottery Office', nameCn: 'Gov. Lottery Office',
+                    time: { th: '3 นาที', en: '3 Mins', cn: '3 分钟' }
+                },
+                {
+                    nameTh: 'สำนักงาน ป.ป.ช.', nameEn: 'NACC', nameCn: 'NACC',
+                    time: { th: '5 นาที', en: '5 Mins', cn: '5 分钟' }
+                },
+                {
+                    nameTh: 'กระทรวงพาณิชย์', nameEn: 'Ministry of Commerce', nameCn: 'Ministry of Commerce',
+                    time: { th: '6 นาที', en: '6 Mins', cn: '6 分钟' }
+                }
             ]
         },
         {
             id: 4,
             icon: '🏥',
             items: [
-                { name: 'Central Chest Institute', distance: '3.9 Km.' },
-                { name: 'Pranangklao Hospital', distance: '5.9 Km.' },
-                { name: 'Ministry of Public Health', distance: '7.4 Km.' }
+                {
+                    nameTh: 'สถาบันโรคทรวงอก', nameEn: 'Central Chest Institute', nameCn: 'Central Chest Institute',
+                    time: { th: '12 นาที', en: '12 Mins', cn: '12 分钟' }
+                },
+                {
+                    nameTh: 'รพ.พระนั่งเกล้า', nameEn: 'Pranangklao Hospital', nameCn: 'Pranangklao Hospital',
+                    time: { th: '14 นาที', en: '14 Mins', cn: '14 分钟' }
+                },
+                {
+                    nameTh: 'กระทรวงสาธารณสุข', nameEn: 'Ministry of Public Health', nameCn: 'Ministry of Public Health',
+                    time: { th: '22 นาที', en: '22 Mins', cn: '22 分钟' }
+                }
             ]
         }
     ];
 
     const categories = t('nearbyPlaces.categories');
+
+    const getName = (item) => {
+        if (language === 'th') return item.nameTh;
+        if (language === 'cn') return item.nameCn;
+        return item.nameEn;
+    };
+
+    const getTime = (item) => {
+        return item.time[language] || item.time.en;
+    };
 
     return (
         <section className="nearby section">
@@ -75,8 +121,8 @@ const NearbyPlaces = () => {
                                 <ul className="nearby__card-list">
                                     {place.items.map((item, i) => (
                                         <li key={i} className="nearby__card-item">
-                                            <span className="nearby__card-name">{item.name}</span>
-                                            <span className="nearby__card-distance">{item.distance}</span>
+                                            <span className="nearby__card-name">{getName(item)}</span>
+                                            <span className="nearby__card-distance">{getTime(item)}</span>
                                         </li>
                                     ))}
                                 </ul>

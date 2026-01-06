@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import './Header.css';
 
+
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -40,12 +41,12 @@ const Header = () => {
     return (
         <header className={`header ${isScrolled ? 'header--scrolled' : ''} ${isMobileMenuOpen ? 'header--menu-open' : ''}`}>
             <div className="header__container">
-                {/* Logo */}
+                {/* Left: Logo */}
                 <Link to="/" className="header__logo">
                     <img src="/images/logo.png" alt="PJ-Residence" className="header__logo-img" />
                 </Link>
 
-                {/* Navigation */}
+                {/* Center: Navigation */}
                 <nav className={`header__nav ${isMobileMenuOpen ? 'header__nav--open' : ''}`}>
                     <ul className="header__nav-list">
                         {navLinks.map((link) => (
@@ -53,46 +54,73 @@ const Header = () => {
                                 <Link
                                     to={link.path}
                                     className={`header__nav-link ${location.pathname === link.path ? 'header__nav-link--active' : ''}`}
+                                    onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                     {link.label}
                                 </Link>
                             </li>
                         ))}
                     </ul>
-                    <Link to="/booking" className="btn btn-primary header__booking-btn">
+                    {/* Mobile Booking Button */}
+                    <Link
+                        to="/booking"
+                        className="btn btn-primary header__booking-btn header__booking-btn--mobile"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                    >
                         {t('nav.booking')}
                     </Link>
                 </nav>
 
-                {/* Language Switcher */}
-                <div className="header__language-switcher">
-                    {languages.map((lang, index) => (
-                        <span key={lang.code}>
-                            <button
-                                className={`header__language-btn ${language === lang.code ? 'header__language-btn--active' : ''}`}
-                                onClick={() => setLanguage(lang.code)}
-                            >
-                                {lang.label}
-                            </button>
-                            {index < languages.length - 1 && <span className="header__language-divider">|</span>}
-                        </span>
-                    ))}
-                </div>
+                {/* Right: Actions */}
+                <div className="header__right">
+                    {/* Desktop Booking Button */}
+                    <Link to="/booking" className="btn btn-primary header__booking-btn header__booking-btn--desktop">
+                        {t('nav.booking')}
+                    </Link>
 
-                {/* Mobile Menu Toggle */}
-                <button
-                    className={`header__mobile-toggle ${isMobileMenuOpen ? 'header__mobile-toggle--open' : ''}`}
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    aria-label="Toggle menu"
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                    {/* Social Icons */}
+                    <div className="header__social">
+                        <a href="https://line.me/ti/p/~PJ11-3" target="_blank" rel="noopener noreferrer" className="header__social-link" aria-label="Line">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 5.58 2 10c0 2.03.94 3.87 2.47 5.26V20l4.24-2.33c1.08.3 2.17.33 3.29.33 5.52 0 10-3.58 10-8s-4.48-8-10-8z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="header__social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    {/* Language Switcher */}
+                    <div className="header__language-switcher">
+                        {languages.map((lang, index) => (
+                            <span key={lang.code}>
+                                <button
+                                    className={`header__language-btn ${language === lang.code ? 'header__language-btn--active' : ''}`}
+                                    onClick={() => setLanguage(lang.code)}
+                                >
+                                    {lang.label}
+                                </button>
+                                {index < languages.length - 1 && <span className="header__language-divider">|</span>}
+                            </span>
+                        ))}
+                    </div>
+
+                    {/* Mobile Toggle */}
+                    <button
+                        className={`header__mobile-toggle ${isMobileMenuOpen ? 'header__mobile-toggle--open' : ''}`}
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        aria-label="Toggle menu"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </header>
     );
 };
 
 export default Header;
-

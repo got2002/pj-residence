@@ -37,7 +37,8 @@ const Contact = () => {
         });
     };
 
-    const highlights = t('contactPage.highlights');
+    const highlightsData = t('contactPage.highlights');
+    const highlights = Array.isArray(highlightsData) ? highlightsData : [];
 
     return (
         <div className="contact-page">
@@ -74,7 +75,6 @@ const Contact = () => {
                                 <div className="contact-about__highlights">
                                     {highlights.map((item, index) => (
                                         <div key={index} className="contact-about__highlight">
-                                            <span>{item.icon}</span>
                                             <span>{item.text}</span>
                                         </div>
                                     ))}
@@ -91,7 +91,7 @@ const Contact = () => {
                                     <iframe
                                         width="100%"
                                         height="300"
-                                        style={{ border: 0, borderRadius: 'var(--radius-lg)', marginTop: 'var(--space-lg)' }}
+                                        style={{ border: 0, marginTop: 'var(--space-lg)' }}
                                         loading="lazy"
                                         allowFullScreen
                                         referrerPolicy="no-referrer-when-downgrade"
@@ -196,7 +196,7 @@ const Contact = () => {
                             <div className="contact-box">
                                 {/* Address */}
                                 <div className="contact-box__section">
-                                    <h3 className="contact-box__title">📍 {t('contact.address')}</h3>
+                                    <h3 className="contact-box__title">{t('contact.address')}</h3>
                                     <p className="contact-box__text">
                                         2/2 Sanambin Nam Rd., Soi Nonthaburi 38<br />
                                         Tha Sai, Muang, Nonthaburi 11000
@@ -204,7 +204,7 @@ const Contact = () => {
                                 </div>
 
                                 <div className="contact-box__section">
-                                    <h3 className="contact-box__title">📞 {t('contact.phone')}</h3>
+                                    <h3 className="contact-box__title">{t('contact.phone')}</h3>
                                     <p className="contact-box__text">
                                         <a href="tel:029687020">02-968-7020</a><br />
                                         <a href="tel:0887883988">088-788-3988</a>
@@ -212,14 +212,14 @@ const Contact = () => {
                                 </div>
 
                                 <div className="contact-box__section">
-                                    <h3 className="contact-box__title">✉️ {t('contact.email')}</h3>
+                                    <h3 className="contact-box__title">{t('contact.email')}</h3>
                                     <p className="contact-box__text">
                                         <a href="mailto:pj.residence.soi38@gmail.com">pj.residence.soi38@gmail.com</a>
                                     </p>
                                 </div>
 
                                 <div className="contact-box__section">
-                                    <h3 className="contact-box__title">🕐 {t('contact.workingHours')}</h3>
+                                    <h3 className="contact-box__title">{t('contact.workingHours')}</h3>
                                     <p className="contact-box__text">
                                         {t('contact.open24')}<br />
                                         {t('contactPage.checkIn')}<br />
@@ -229,7 +229,7 @@ const Contact = () => {
 
                                 {/* Social Media */}
                                 <div className="contact-box__section contact-box__section--social">
-                                    <h3 className="contact-box__title">🌐 {t('contactPage.socialMedia')}</h3>
+                                    <h3 className="contact-box__title">{t('contactPage.socialMedia')}</h3>
                                     <div className="contact-box__social-links">
                                         <a href="https://line.me/ti/p/~PJ11-3" target="_blank" rel="noopener noreferrer" className="contact-box__social-link contact-box__social-link--line">
                                             <svg className="contact-box__social-icon" viewBox="0 0 24 24" fill="currentColor">

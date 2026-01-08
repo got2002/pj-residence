@@ -15,7 +15,7 @@ const Footer = () => {
                     {/* Brand */}
                     <div className="footer__brand">
                         <Link to="/" className="footer__logo">
-                            <img src="/images/logo.png" alt="PJ-Residence" className="footer__logo-img" />
+                            <img src="/images/logo.webp" alt="PJ-Residence" className="footer__logo-img" />
                         </Link>
                         <p className="footer__description">
                             {t('footer.description')}

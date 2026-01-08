@@ -82,8 +82,8 @@ const Hero = () => {
                         className={`hero__slide ${index === currentSlide ? 'hero__slide--active' : ''}`}
                         style={{
                             backgroundImage: index === 0
-                                ? `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('/images/hero-${index + 1}.png')`
-                                : `linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('/images/hero-${index + 1}.png')`
+                                ? `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('/images/hero-${index + 1}.webp')`
+                                : `linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('/images/hero-${index + 1}.webp')`
                         }}
                     />
                 ))}

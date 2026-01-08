@@ -6,7 +6,7 @@ const Accommodations = () => {
     const { t } = useLanguage();
     const rooms = t('accommodations.rooms');
     const prices = ['฿6,500', '฿850'];
-    const images = ['/images/gallery__placeholder.png', '/images/gallery__placeholder1.png'];
+    const images = ['/images/gallery__placeholder.webp', '/images/gallery__placeholder1.webp'];
 
     return (
         <section className="accommodations section">

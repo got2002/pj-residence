@@ -13,14 +13,14 @@ const AboutUs = () => {
                     <div className="about__image">
                         <div className="about__image-main">
                             <img
-                                src="/images/hero-4.png"
+                                src="/images/hero-4.webp"
                                 alt="PJ-Residence Atmosphere"
                                 className="about__image-photo"
                             />
                         </div>
                         <div className="about__image-accent">
                             <img
-                                src="/images/hero-5.png"
+                                src="/images/hero-5.webp"
                                 alt="Hotel Detail"
                                 className="about__image-photo"
                             />

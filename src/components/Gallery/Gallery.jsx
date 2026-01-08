@@ -8,12 +8,12 @@ const Gallery = () => {
     const { t } = useLanguage();
 
     const images = [
-        { id: 1, category: t('gallery.categories.rooms'), title: 'Guest Room', image: '/images/gallery__placeholder.png' },
-        { id: 2, category: t('gallery.categories.rooms'), title: 'Guest Room', image: '/images/gallery__placeholder1.png' },
-        { id: 3, category: t('gallery.categories.rooms'), title: 'Guest Room', image: '/images/gallery__placeholder2.png' },
-        { id: 4, category: t('gallery.categories.rooms'), title: 'Guest Room', image: '/images/gallery__placeholder3.png' },
-        { id: 5, category: t('gallery.categories.lobby'), title: 'Grand Lobby', image: '/images/Grand_Lobby.png' },
-        { id: 6, category: t('gallery.categories.lobby'), title: 'Grand Lobby', image: '/images/Grand_Lobby1.jpg' },
+        { id: 1, category: t('gallery.categories.rooms'), title: 'Guest Room', image: '/images/gallery__placeholder.webp' },
+        { id: 2, category: t('gallery.categories.rooms'), title: 'Guest Room', image: '/images/gallery__placeholder1.webp' },
+        { id: 3, category: t('gallery.categories.rooms'), title: 'Guest Room', image: '/images/gallery__placeholder2.webp' },
+        { id: 4, category: t('gallery.categories.rooms'), title: 'Guest Room', image: '/images/gallery__placeholder3.webp' },
+        { id: 5, category: t('gallery.categories.lobby'), title: 'Grand Lobby', image: '/images/Grand_Lobby.webp' },
+        { id: 6, category: t('gallery.categories.lobby'), title: 'Grand Lobby', image: '/images/Grand_Lobby1.webp' },
     ];
 
     return (

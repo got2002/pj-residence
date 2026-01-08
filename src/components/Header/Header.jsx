@@ -43,7 +43,7 @@ const Header = () => {
             <div className="header__container">
                 {/* Left: Logo */}
                 <Link to="/" className="header__logo">
-                    <img src="/images/logo.png" alt="PJ-Residence" className="header__logo-img" />
+                    <img src="/images/logo.webp" alt="PJ-Residence" className="header__logo-img" />
                 </Link>
 
                 {/* Center: Navigation */}

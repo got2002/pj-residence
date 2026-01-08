@@ -10,10 +10,10 @@ const Rooms = () => {
     const { t } = useLanguage();
 
     const slideImages = [
-        '/images/gallery__placeholder.png',
-        '/images/gallery__placeholder1.png',
-        '/images/gallery__placeholder2.png',
-        '/images/gallery__placeholder3.png'
+        '/images/gallery__placeholder.webp',
+        '/images/gallery__placeholder1.webp',
+        '/images/gallery__placeholder2.webp',
+        '/images/gallery__placeholder3.webp'
     ];
 
     useEffect(() => {

@@ -8,12 +8,16 @@ const Gallery = () => {
     const { t } = useLanguage();
 
     const images = [
-        { id: 1, category: t('gallery.categories.rooms'), title: 'Guest Room', image: '/images/room/room_4.jpg' },
-        { id: 2, category: t('gallery.categories.rooms'), title: 'Guest Room', image: '/images/room/room_5.jpg' },
-        { id: 3, category: t('gallery.categories.rooms'), title: 'Guest Room', image: '/images/room/room_6.jpg' },
-        { id: 4, category: t('gallery.categories.rooms'), title: 'Guest Room', image: '/images/room/room_22.jpg' },
-        { id: 5, category: t('gallery.categories.lobby'), title: 'Grand Lobby', image: '/images/grand_lobby.webp' },
-        { id: 6, category: t('gallery.categories.lobby'), title: 'Grand Lobby', image: '/images/grand_lobby_1.webp' },
+        { id: 1, category: t('gallery.categories.lobby'), title: 'Atmosphere', image: '/images/gallery__placeholder.webp' },
+        { id: 2, category: t('gallery.categories.lobby'), title: 'Atmosphere', image: '/images/gallery__placeholder1.webp' },
+        { id: 3, category: t('gallery.categories.lobby'), title: 'Atmosphere', image: '/images/gallery__placeholder2.webp' },
+        { id: 4, category: t('gallery.categories.lobby'), title: 'Atmosphere', image: '/images/gallery__placeholder3.webp' },
+        { id: 5, category: t('gallery.categories.rooms'), title: 'Guest Room', image: '/images/room/room_4.jpg' },
+        { id: 6, category: t('gallery.categories.rooms'), title: 'Guest Room', image: '/images/room/room_5.jpg' },
+        { id: 7, category: t('gallery.categories.rooms'), title: 'Guest Room', image: '/images/room/room_6.jpg' },
+        { id: 8, category: t('gallery.categories.rooms'), title: 'Guest Room', image: '/images/room/room_22.jpg' },
+        { id: 9, category: t('gallery.categories.lobby'), title: 'Grand Lobby', image: '/images/grand_lobby.webp' },
+        { id: 10, category: t('gallery.categories.lobby'), title: 'Grand Lobby', image: '/images/grand_lobby_1.webp' },
     ];
 
     return (

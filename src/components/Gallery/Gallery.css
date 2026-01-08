@@ -251,19 +251,30 @@
 
 @media (max-width: 576px) {
     .gallery__grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
         gap: 2px;
         padding: 2px;
     }
 
-    .gallery__item--1,
+    /* Make first item span full width */
+    .gallery__item--1 {
+        grid-column: span 2 !important;
+    }
+
+    /* Others including --4 default to span 1 */
     .gallery__item--4 {
-        grid-column: span 1;
+        grid-column: span 1 !important;
     }
 
     .gallery__item {
-        height: 220px;
+        height: 180px;
+        /* Reduced height slightly for pairs */
+    }
+
+    .gallery__item--1 {
+        height: 250px;
+        /* Larger height for the featured first image */
     }
 
     .gallery__lightbox-title {

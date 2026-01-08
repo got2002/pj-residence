@@ -10,11 +10,13 @@ import DailyBooking from './pages/DailyBooking.jsx';
 import Admin from './pages/Admin.jsx';
 
 import ScrollToTop from './components/ScrollToTop';
+import FloatingSocial from './components/FloatingSocial/FloatingSocial';
 
 function App() {
   return (
     <>
       <ScrollToTop />
+      <FloatingSocial />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/rooms" element={<Rooms />} />

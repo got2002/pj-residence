@@ -240,7 +240,27 @@
 }
 
 /* Responsive */
-@media (max-width: 992px) {
+/* Responsive */
+@media (max-width: 1200px) {
+    .about__wrapper {
+        gap: var(--space-xl);
+    }
+
+    .about__image {
+        height: 500px;
+    }
+
+    .about__image-badge {
+        width: 80px;
+        height: 80px;
+    }
+
+    .about__badge-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
     .about__wrapper {
         grid-template-columns: 1fr;
         gap: var(--space-3xl);
@@ -248,8 +268,8 @@
 
     .about__image {
         order: 1;
-        height: 450px;
-        max-width: 550px;
+        height: 400px;
+        max-width: 100%;
         margin: 0 auto;
     }
 

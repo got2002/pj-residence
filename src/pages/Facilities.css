@@ -189,41 +189,48 @@
 }
 
 .facilities-all__list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xs) var(--space-md);
 }
 
 .facilities-all__item {
-    padding: var(--space-md) 0;
+    padding: var(--space-xs) 0;
     font-size: 0.95rem;
     color: #555555;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    border-bottom: none;
     transition: all 0.3s ease;
     font-weight: 300;
     letter-spacing: 0.02em;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    text-align: left;
 }
 
-.facilities-all__item:last-child {
+/* Remove bottom border for the last two items (last row) */
+.facilities-all__item:nth-last-child(-n+2) {
     border-bottom: none;
 }
 
+/* Add right border to odd items */
+.facilities-all__item:nth-child(odd) {
+    border-right: none;
+}
+
+/* Restore circle marker */
 .facilities-all__item::before {
     content: '•';
-    color: rgba(183, 156, 105, 0.4);
+    display: block;
+    color: rgba(183, 156, 105, 0.6);
     font-size: 0.8rem;
     margin-right: var(--space-md);
     transition: color 0.3s ease;
 }
 
-.facilities-all__category:hover .facilities-all__item::before {
-    color: #c9a962;
-}
-
 .facilities-all__category:hover .facilities-all__item:hover {
     color: #1a1a1a;
+    background: transparent;
     padding-left: 5px;
 }
 

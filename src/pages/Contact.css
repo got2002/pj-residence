@@ -400,9 +400,7 @@
         gap: var(--space-3xl);
     }
 
-    .contact-about__map {
-        order: -1;
-    }
+
 
     .contact-main__wrapper {
         grid-template-columns: 1fr;

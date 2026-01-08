@@ -72,13 +72,7 @@ const Contact = () => {
                                     {t('contactPage.locationText2')}
                                 </p>
 
-                                <div className="contact-about__highlights">
-                                    {highlights.map((item, index) => (
-                                        <div key={index} className="contact-about__highlight">
-                                            <span>{item.text}</span>
-                                        </div>
-                                    ))}
-                                </div>
+                                { /* Highlights section removed as per request */}
                             </div>
                             <div className="contact-about__map">
                                 <img src="/images/map.jpg" alt="PJ-Residence Map" />

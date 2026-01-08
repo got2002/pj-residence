@@ -239,6 +239,26 @@
     color: var(--color-white);
 }
 
+.hero__booking-item input[type="date"] {
+    -webkit-appearance: none;
+    appearance: none;
+    min-height: 45px;
+    /* Ensure sufficient touch target height */
+    line-height: normal;
+    text-align: left;
+    /* Fix alignment */
+    opacity: 1;
+    /* Fix potential transparency issues */
+}
+
+/* Fix WebKit specific date picker icon color if needed */
+.hero__booking-item input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    /* Invert to make it white-ish for dark background */
+    cursor: pointer;
+    opacity: 0.6;
+}
+
 .hero__booking-btn {
     white-space: nowrap;
 }
@@ -293,7 +313,8 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        gap: var(--space-sm);
+        gap: var(--space-md);
+        /* Increased gap to prevent touching */
     }
 
     .hero__booking-item {

@@ -342,3 +342,30 @@
         display: none;
     }
 }
+
+/* Force date input text color for iOS/mobile */
+.hero__booking-item input[type="date"] {
+    -webkit-appearance: none;
+    appearance: none;
+    min-height: 50px;
+    /* Match standardized height */
+    line-height: normal;
+    text-align: left;
+    color: var(--color-white);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Placeholder color hack for date inputs */
+.hero__booking-item input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+    display: flex;
+}
+
+.hero__booking-item input[type="date"]::-webkit-date-and-time-value {
+    color: var(--color-white);
+}
+
+.hero__booking-item input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+    opacity: 0.8;
+}

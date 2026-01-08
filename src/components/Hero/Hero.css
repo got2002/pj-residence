@@ -224,11 +224,10 @@
 .hero__booking-item select {
     width: 100%;
     /* Full width of container */
-    height: 42px;
-    /* Reduced from 50px */
+    height: 30px;
+    /* Reduced to 30px */
     /* Standardize height */
     padding: 0 var(--space-sm);
-    /* Reduced padding */
     /* Consistent padding */
     font-family: var(--font-body);
     font-size: var(--text-sm);
@@ -265,14 +264,13 @@
 
 .hero__booking-btn {
     white-space: nowrap;
-    height: 42px;
-    /* Reduced from 50px */
+    height: 30px;
+    /* Reduced to 30px */
     /* Match input height */
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 var(--space-xl);
-    /* Reduced from 2xl */
     font-weight: 600;
 }
 
@@ -352,8 +350,8 @@
 .hero__booking-item input[type="date"] {
     -webkit-appearance: none;
     appearance: none;
-    min-height: 42px;
-    /* Match standardized height */
+    min-height: 30px;
+    /* Reduced to 30px as requested */
     line-height: normal;
     text-align: left;
     color: var(--color-white);

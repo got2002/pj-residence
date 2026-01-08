@@ -347,7 +347,7 @@
 .hero__booking-item input[type="date"] {
     -webkit-appearance: none;
     appearance: none;
-    min-height: 50px;
+    min-height: 42px;
     /* Match standardized height */
     line-height: normal;
     text-align: left;

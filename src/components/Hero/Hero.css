@@ -323,18 +323,23 @@
         /* Allow 2 items per row */
     }
 
-    .hero__booking-btn {
-        width: auto;
-        flex: 1 1 100%;
-        /* Button takes full width or wrap nicely */
-        margin-top: var(--space-sm);
-    }
-
     /* Override input widths from previous specific mobile styles if needed */
     .hero__booking-item input,
     .hero__booking-item select {
         width: 100%;
         min-width: 0;
+        min-height: 45px;
+        /* Match height with date inputs */
+    }
+
+    .hero__booking-btn {
+        width: auto;
+        flex: 1 1 100%;
+        margin-top: var(--space-sm);
+        min-height: 52px;
+        /* Make button larger */
+        font-size: 1.1rem;
+        /* Increase text size */
     }
 
     .hero__title {

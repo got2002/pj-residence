@@ -47,7 +47,7 @@ const Booking = () => {
                 priceUnit: 'บาท/คืน',
                 popular: false,
                 pricing: [
-                    { label: 'ค่าประกันห้อง', value: '680 บาท (1 คืน)' }
+                    { label: 'ค่าประกันห้อง', value: '1,000 บาท (1 คืน)' }
                 ],
                 amenities: [
                     { label: 'WiFi', value: 'ฟรี' },
@@ -92,7 +92,7 @@ const Booking = () => {
                 priceUnit: 'THB/night',
                 popular: false,
                 pricing: [
-                    { label: 'Room Deposit', value: '680 THB (1 night)' }
+                    { label: 'Room Deposit', value: '1,000 THB (1 night)' }
                 ],
                 amenities: [
                     { label: 'WiFi', value: 'Free' },
@@ -137,7 +137,7 @@ const Booking = () => {
                 priceUnit: '泰铢/晚',
                 popular: false,
                 pricing: [
-                    { label: '押金', value: '680 泰铢 (1晚)' }
+                    { label: '押金', value: '1,000 泰铢 (1晚)' }
                 ],
                 amenities: [
                     { label: 'WiFi', value: '免费' },
@@ -405,7 +405,7 @@ const Booking = () => {
         if (formData.roomType === 'monthly') {
             deposit = 13500; // 3 months deposit
         } else {
-            deposit = 680; // 1 night deposit
+            deposit = 1000; // 1 night deposit
         }
 
         if (formData.extraBed) {

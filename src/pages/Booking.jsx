@@ -43,11 +43,11 @@ const Booking = () => {
             {
                 id: 'daily',
                 name: 'ห้องพักรายวัน',
-                price: 850,
+                price: 680,
                 priceUnit: 'บาท/คืน',
                 popular: false,
                 pricing: [
-                    { label: 'ค่าประกันห้อง', value: '1,000 บาท (1 คืน)' }
+                    { label: 'ค่าประกันห้อง', value: '680 บาท (1 คืน)' }
                 ],
                 amenities: [
                     { label: 'WiFi', value: 'ฟรี' },
@@ -64,11 +64,11 @@ const Booking = () => {
             {
                 id: 'monthly',
                 name: 'ห้องพักรายเดือน',
-                price: 6500,
+                price: 4500,
                 priceUnit: 'บาท/เดือน',
                 popular: true,
                 pricing: [
-                    { label: 'ค่าประกันห้อง', value: '19,500 บาท (3 เดือน)' },
+                    { label: 'ค่าประกันห้อง', value: '13,500 บาท (3 เดือน)' },
                     { label: 'ค่าน้ำ', value: '19 บาท/หน่วย' },
                     { label: 'ค่าไฟ', value: '9 บาท/หน่วย' }
                 ],
@@ -88,11 +88,11 @@ const Booking = () => {
             {
                 id: 'daily',
                 name: 'Daily Room',
-                price: 850,
+                price: 680,
                 priceUnit: 'THB/night',
                 popular: false,
                 pricing: [
-                    { label: 'Room Deposit', value: '1,000 THB (1 night)' }
+                    { label: 'Room Deposit', value: '680 THB (1 night)' }
                 ],
                 amenities: [
                     { label: 'WiFi', value: 'Free' },
@@ -109,11 +109,11 @@ const Booking = () => {
             {
                 id: 'monthly',
                 name: 'Monthly Room',
-                price: 6500,
+                price: 4500,
                 priceUnit: 'THB/month',
                 popular: true,
                 pricing: [
-                    { label: 'Room Deposit', value: '19,500 THB (3 months)' },
+                    { label: 'Room Deposit', value: '13,500 THB (3 months)' },
                     { label: 'Water', value: '19 THB/unit' },
                     { label: 'Electricity', value: '9 THB/unit' }
                 ],
@@ -133,11 +133,11 @@ const Booking = () => {
             {
                 id: 'daily',
                 name: '日租房',
-                price: 850,
+                price: 680,
                 priceUnit: '泰铢/晚',
                 popular: false,
                 pricing: [
-                    { label: '押金', value: '1,000 泰铢 (1晚)' }
+                    { label: '押金', value: '680 泰铢 (1晚)' }
                 ],
                 amenities: [
                     { label: 'WiFi', value: '免费' },
@@ -154,11 +154,11 @@ const Booking = () => {
             {
                 id: 'monthly',
                 name: '月租房',
-                price: 6500,
+                price: 4500,
                 priceUnit: '泰铢/月',
                 popular: true,
                 pricing: [
-                    { label: '押金', value: '19,500 泰铢 (3个月)' },
+                    { label: '押金', value: '13,500 泰铢 (3个月)' },
                     { label: '水费', value: '19 泰铢/度' },
                     { label: '电费', value: '9 泰铢/度' }
                 ],
@@ -403,9 +403,9 @@ const Booking = () => {
         // Get deposit from pricing data
         let deposit = 0;
         if (formData.roomType === 'monthly') {
-            deposit = 19500; // 3 months deposit
+            deposit = 13500; // 3 months deposit
         } else {
-            deposit = 1000; // 1 night deposit
+            deposit = 680; // 1 night deposit
         }
 
         if (formData.extraBed) {

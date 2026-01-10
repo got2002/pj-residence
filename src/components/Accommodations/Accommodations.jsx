@@ -5,7 +5,7 @@ import './Accommodations.css';
 const Accommodations = () => {
     const { t } = useLanguage();
     const rooms = t('accommodations.rooms');
-    const prices = ['฿6,500', '฿850'];
+    const prices = ['฿4,500', '฿680'];
     const images = ['/images/gallery__placeholder.webp', '/images/gallery__placeholder1.webp'];
 
     return (

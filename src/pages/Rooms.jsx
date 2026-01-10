@@ -130,7 +130,7 @@ const Rooms = () => {
                                     <span className="pricing-card__badge">{t('roomsPage.popular')}</span>
                                     <h3 className="pricing-card__title">{t('roomsPage.monthly')}</h3>
                                     <div className="pricing-card__price">
-                                        <span className="pricing-card__amount">6,500</span>
+                                        <span className="pricing-card__amount">4,500</span>
                                         <span className="pricing-card__unit">{t('roomsPage.perMonth')}</span>
                                     </div>
                                 </div>
@@ -139,7 +139,7 @@ const Rooms = () => {
                                         <li>
                                             <span className="pricing-card__feature-label">{t('roomsPage.deposit')}</span>
                                             <span className="pricing-card__feature-value">
-                                                <div>3 {t('roomsPage.months')}: <strong>19,500 THB</strong></div>
+                                                <div>3 {t('roomsPage.months')}: <strong>13,500 THB</strong></div>
                                             </span>
                                         </li>
                                         <li>
@@ -171,7 +171,7 @@ const Rooms = () => {
                                 <div className="pricing-card__header">
                                     <h3 className="pricing-card__title">{t('roomsPage.daily')}</h3>
                                     <div className="pricing-card__price">
-                                        <span className="pricing-card__amount">850</span>
+                                        <span className="pricing-card__amount">680</span>
                                         <span className="pricing-card__unit">{t('roomsPage.perNight')}</span>
                                     </div>
                                 </div>
@@ -179,7 +179,7 @@ const Rooms = () => {
                                     <ul className="pricing-card__features">
                                         <li>
                                             <span className="pricing-card__feature-label">{t('roomsPage.deposit')}</span>
-                                            <span className="pricing-card__feature-value">1,000 THB (1 night)</span>
+                                            <span className="pricing-card__feature-value">680 THB (1 night)</span>
                                         </li>
                                         <li>
                                             <span className="pricing-card__feature-label">{t('roomsPage.water')}</span>

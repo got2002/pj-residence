@@ -55,11 +55,11 @@ const DailyBooking = () => {
             {
                 id: 'daily',
                 name: 'ห้องพักรายวัน',
-                price: 850,
+                price: 680,
                 priceUnit: 'บาท/คืน',
                 popular: false,
                 pricing: [
-                    { label: 'ค่าประกันห้อง', value: '1,000 บาท (1 คืน)' }
+                    { label: 'ค่าประกันห้อง', value: '680 บาท (1 คืน)' }
                 ],
                 amenities: [
                     { label: 'WiFi', value: 'ฟรี' },
@@ -78,11 +78,11 @@ const DailyBooking = () => {
             {
                 id: 'daily',
                 name: 'Daily Room',
-                price: 850,
+                price: 680,
                 priceUnit: 'THB/night',
                 popular: false,
                 pricing: [
-                    { label: 'Room Deposit', value: '1,000 THB (1 night)' }
+                    { label: 'Room Deposit', value: '680 THB (1 night)' }
                 ],
                 amenities: [
                     { label: 'WiFi', value: 'Free' },
@@ -101,11 +101,11 @@ const DailyBooking = () => {
             {
                 id: 'daily',
                 name: '日租房',
-                price: 850,
+                price: 680,
                 priceUnit: '泰铢/晚',
                 popular: false,
                 pricing: [
-                    { label: '押金', value: '1,000 泰铢 (1晚)' }
+                    { label: '押金', value: '680 泰铢 (1晚)' }
                 ],
                 amenities: [
                     { label: 'WiFi', value: '免费' },
@@ -333,7 +333,7 @@ const DailyBooking = () => {
         }
 
         // Get deposit from pricing data
-        let deposit = 1000 * formData.rooms; // 1000 per room
+        let deposit = 680 * formData.rooms; // 680 per room
 
         if (formData.extraBed) {
             extraCost += 500;

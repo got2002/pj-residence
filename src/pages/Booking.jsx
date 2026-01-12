@@ -43,7 +43,7 @@ const Booking = () => {
             {
                 id: 'daily',
                 name: 'ห้องพักรายวัน',
-                price: 680,
+                price: 850,
                 priceUnit: 'บาท/คืน',
                 popular: false,
                 pricing: [
@@ -88,7 +88,7 @@ const Booking = () => {
             {
                 id: 'daily',
                 name: 'Daily Room',
-                price: 680,
+                price: 850,
                 priceUnit: 'THB/night',
                 popular: false,
                 pricing: [
@@ -133,7 +133,7 @@ const Booking = () => {
             {
                 id: 'daily',
                 name: '日租房',
-                price: 680,
+                price: 850,
                 priceUnit: '泰铢/晚',
                 popular: false,
                 pricing: [
@@ -388,6 +388,12 @@ const Booking = () => {
     const calculatePrice = () => {
         const selectedRoom = rooms.find(r => r.id === formData.roomType);
         let basePrice = selectedRoom?.price || 0;
+
+        // Overlay Government Price
+        if (formData.roomType === 'daily' && formData.isGovernment) {
+            basePrice = 680;
+        }
+
         let extraCost = 0;
 
         // Calculate nights
@@ -466,7 +472,7 @@ const Booking = () => {
                         </div>
                     )}
 
-                    <div className={`booking-content ${step === 5 ? 'booking-content--centered' : ''}`}>
+                    <div className={`booking-content ${step !== 4 ? 'booking-content--centered' : ''}`}>
                         <form className="booking-form" onSubmit={handleSubmit}>
                             {/* Step 1: Room Selection */}
                             {step === 1 && (
@@ -488,8 +494,6 @@ const Booking = () => {
                                                         checked={formData.roomType === room.id}
                                                         onChange={(e) => {
                                                             handleChange(e);
-                                                            // For Monthly: Force 'viewing'
-                                                            // For Daily: Force 'reserve'
                                                             if (room.id === 'monthly') {
                                                                 setFormData(prev => ({ ...prev, bookingType: 'viewing' }));
                                                             } else {
@@ -502,7 +506,25 @@ const Booking = () => {
                                                         <img src={`/images/gallery__placeholder${room.id === 'daily' ? '1' : ''}.png`} alt={room.name} />
                                                         <div className="booking-room-option__info">
                                                             <h4>{room.name}</h4>
-                                                            <span className="booking-room-option__price">{room.price.toLocaleString()} {room.priceUnit}</span>
+                                                            <span className="booking-room-option__price">
+                                                                {formData.roomType === 'daily' && formData.isGovernment ? '680' : room.price.toLocaleString()} {room.priceUnit}
+                                                            </span>
+
+                                                            {/* Government Official Checkbox (Only for Daily) */}
+                                                            {room.id === 'daily' && (
+                                                                <div className="gov-checkbox-wrapper" style={{ margin: '0.5rem 0', padding: '0.5rem', background: '#f0fdf4', borderRadius: '6px', border: '1px solid #bbf7d0' }}>
+                                                                    <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', fontSize: '0.9rem', color: '#166534', fontWeight: '600' }}>
+                                                                        <input
+                                                                            type="checkbox"
+                                                                            name="isGovernment"
+                                                                            checked={formData.isGovernment || false}
+                                                                            onChange={handleChange}
+                                                                        />
+                                                                        ข้าราชการ/รัฐวิสาหกิจ (680 บาท/คืน)
+                                                                        <span style={{ fontSize: '0.75rem', fontWeight: 'normal', color: '#15803d' }}>(*โปรดแสดงบัตร)</span>
+                                                                    </label>
+                                                                </div>
+                                                            )}
 
                                                             {/* Pricing Section */}
                                                             <ul className="booking-room-option__pricing">
@@ -1061,8 +1083,8 @@ const Booking = () => {
                             )}
                         </form>
 
-                        {/* Booking Summary Sidebar */}
-                        {step < 5 && (
+                        {/* Booking Summary Sidebar (Only on Step 4: Confirmation) */}
+                        {step === 4 && (
                             <div className="booking-summary">
                                 <h3 className="booking-summary__title">{l.bookingSummary}</h3>
 

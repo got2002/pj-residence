@@ -54,14 +54,7 @@ app.put('/api/rooms/:id', async (req, res) => {
             [status, guest_name, phone, id_card, check_in, check_out, note, id]
         );
 
-        // Send LINE Notification if room is booked (status not available)
-        if (status !== 'available' && result.rows.length > 0) {
-            const room = result.rows[0];
-            const message = `🔔 มีการจองใหม่!\n\n🏠 ห้อง: ${room.id}\n👤 ชื่อ: ${room.guest_name}\n📞 โทร: ${room.phone}\n📅 เข้าพัก: ${new Date(room.check_in).toLocaleDateString('th-TH')}\n🏁 ออก: ${new Date(room.check_out).toLocaleDateString('th-TH')}\n📝 หมายเหตุ: ${room.note || '-'}`;
 
-            // Fire and forget notification
-            sendLineMessage(message).catch(err => console.error('Failed to send LINE notify:', err.message));
-        }
 
         res.json(result.rows[0]);
     } catch (err) {

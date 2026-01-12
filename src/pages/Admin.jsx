@@ -518,7 +518,7 @@ const AdminContent = () => {
                                     Open Room (เปิดห้อง)
                                 </button>
                             )}
-                            <div style={{ display: 'flex', gap: '1rem', marginLeft: 'auto' }}>
+                            <div className="action-buttons">
                                 <button className="btn-cancel" onClick={() => setIsModalOpen(false)}>ยกเลิก</button>
                                 <button className="btn-save" onClick={handleSave}>บันทึกข้อมูล</button>
                             </div>

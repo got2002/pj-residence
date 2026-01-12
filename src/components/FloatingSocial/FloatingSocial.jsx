@@ -9,6 +9,12 @@ const FloatingSocial = () => {
     useEffect(() => {
         // Function to check scroll position
         const handleScroll = () => {
+            // Hide on admin pages
+            if (location.pathname.startsWith('/admin')) {
+                setIsVisible(false);
+                return;
+            }
+
             if (location.pathname === '/') {
                 if (window.scrollY > 500) {
                     setIsVisible(true);

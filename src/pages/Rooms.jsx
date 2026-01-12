@@ -171,7 +171,7 @@ const Rooms = () => {
                                 <div className="pricing-card__header">
                                     <h3 className="pricing-card__title">{t('roomsPage.daily')}</h3>
                                     <div className="pricing-card__price">
-                                        <span className="pricing-card__amount">680</span>
+                                        <span className="pricing-card__amount">850</span>
                                         <span className="pricing-card__unit">{t('roomsPage.perNight')}</span>
                                     </div>
                                 </div>

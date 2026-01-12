@@ -550,7 +550,7 @@
 
 @media (max-width: 640px) {
     .admin-stats {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .room-grid {
@@ -707,7 +707,7 @@
     position: absolute;
     top: 5px;
     right: 5px;
-    background-color: var(--color-red);
+    background-color: #FF0000;
     color: white;
     font-size: 0.7rem;
     width: 18px;
@@ -726,6 +726,7 @@
     top: 100%;
     right: 0;
     width: 350px;
+    max-width: 85vw;
     background: white;
     border: 1px solid var(--admin-border);
     border-radius: 12px;
@@ -840,4 +841,48 @@
 .dropdown-pagination button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+}
+
+/* Action Buttons Layout */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
+}
+
+@media (max-width: 640px) {
+    .notification-dropdown {
+        position: fixed;
+        top: 80px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 95vw;
+        max-width: 380px;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .modal-footer {
+        display: flex;
+        flex-direction: column-reverse;
+        /* Save button (2nd) on top */
+        gap: 0.8rem;
+        /* Remove grid styles */
+        grid-template-columns: none;
+    }
+
+    .btn-cancel,
+    .btn-save {
+        width: 100%;
+        margin: 0;
+    }
+
+    .action-buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 0.8rem;
+        margin-left: 0;
+    }
 }

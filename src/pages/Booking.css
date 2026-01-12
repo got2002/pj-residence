@@ -118,7 +118,7 @@
 .booking-steps {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 3rem;
     gap: 1rem;
 }
@@ -145,6 +145,7 @@
     font-size: 0.9rem;
     font-weight: 500;
     transition: all 0.4s ease;
+    flex-shrink: 0;
 }
 
 .booking-step--active .booking-step__number {
@@ -172,6 +173,8 @@
     color: #999;
     font-weight: 500;
     transition: color 0.3s ease;
+    text-align: center;
+    max-width: 80px;
 }
 
 .booking-step--active .booking-step__label,
@@ -183,7 +186,7 @@
     width: 60px;
     height: 1px;
     background: #e0e0e0;
-    margin-top: -24px;
+    margin-top: 16px;
     /* Align with center of circle */
 }
 

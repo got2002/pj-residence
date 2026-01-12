@@ -7,7 +7,7 @@ import './Rooms.css';
 
 const Rooms = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
 
     const slideImages = [
         '/images/gallery__placeholder.webp',
@@ -130,16 +130,32 @@ const Rooms = () => {
                                     <span className="pricing-card__badge">{t('roomsPage.popular')}</span>
                                     <h3 className="pricing-card__title">{t('roomsPage.monthly')}</h3>
                                     <div className="pricing-card__price">
-                                        <span className="pricing-card__amount">4,500</span>
+                                        <span className="pricing-card__amount">5,000 - 8,500</span>
                                         <span className="pricing-card__unit">{t('roomsPage.perMonth')}</span>
                                     </div>
                                 </div>
                                 <div className="pricing-card__body">
                                     <ul className="pricing-card__features">
+                                        <li style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '0.25rem' }}>
+                                            <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                                                <span className="pricing-card__feature-label">{t('roomsPage.rent')} 1-6 {t('roomsPage.months')}</span>
+                                                <span className="pricing-card__feature-value"><strong>8,500 THB</strong></span>
+                                            </div>
+                                            <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                                                <span className="pricing-card__feature-label">{t('roomsPage.rent')} 6+ {t('roomsPage.months')}</span>
+                                                <span className="pricing-card__feature-value"><strong>5,000 THB</strong></span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span className="pricing-card__feature-label">{t('roomsPage.furnitureDeposit')}</span>
+                                            <span className="pricing-card__feature-value"><strong>5,000 THB</strong></span>
+                                        </li>
                                         <li>
                                             <span className="pricing-card__feature-label">{t('roomsPage.deposit')}</span>
                                             <span className="pricing-card__feature-value">
-                                                <div>3 {t('roomsPage.months')}: <strong>13,500 THB</strong></div>
+                                                <div style={{ fontSize: '0.85rem' }}>{t('roomsPage.lessThanOneMonth')}: <strong>850 THB</strong></div>
+                                                <div style={{ fontSize: '0.85rem' }}>1-6 {t('roomsPage.months')}: <strong>8,500 THB</strong></div>
+                                                <div style={{ fontSize: '0.85rem' }}>6+ {t('roomsPage.months')}: <strong>10,000 THB</strong></div>
                                             </span>
                                         </li>
                                         <li>
@@ -148,12 +164,14 @@ const Rooms = () => {
                                         </li>
                                         <li>
                                             <span className="pricing-card__feature-label">{t('roomsPage.electricity')}</span>
-                                            <span className="pricing-card__feature-value">9 THB/unit</span>
+                                            <span className="pricing-card__feature-value">7 THB/unit</span>
                                         </li>
                                         <li>
                                             <span className="pricing-card__feature-label">{t('roomsPage.minContract')}</span>
-                                            <span className="pricing-card__feature-value">6 {t('roomsPage.months')}</span>
+                                            <span className="pricing-card__feature-value">-</span>
                                         </li>
+
+
                                     </ul>
                                     <Link
                                         to="/booking"
@@ -176,6 +194,19 @@ const Rooms = () => {
                                     </div>
                                 </div>
                                 <div className="pricing-card__body">
+                                    <div style={{ margin: '1rem 0' }}>
+                                        <div className="gov-checkbox-wrapper" style={{ margin: '0.5rem 0', padding: '0.5rem', background: '#f0fdf4', borderRadius: '6px', border: '1px solid #bbf7d0' }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#166534', fontWeight: '600' }}>
+                                                {language === 'th' ? 'ข้าราชการ/รัฐวิสาหกิจ (650 บาท/คืน)' : language === 'cn' ? '公务员/国企员工 (650 泰铢/晚)' : 'Gov. Official (650 THB/night)'}
+                                                <span style={{ fontSize: '0.75rem', fontWeight: 'normal', color: '#15803d' }}>{language === 'th' ? '(*โปรดแสดงบัตร)' : language === 'cn' ? '(*请出示证件)' : '(*Show ID)'}</span>
+                                            </div>
+                                        </div>
+                                        <div className="google-review-wrapper" style={{ margin: '0.5rem 0', padding: '0.5rem', background: '#eff6ff', borderRadius: '6px', border: '1px solid #bfdbfe' }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#1e40af', fontWeight: '600' }}>
+                                                {language === 'th' ? 'รีวิว Google Map 5 ดาว (650 บาท/คืน)' : language === 'cn' ? '谷歌地图 5 星好评 (650 泰铢/晚)' : 'Google Map 5-Star Review (650 THB/night)'}
+                                            </div>
+                                        </div>
+                                    </div>
                                     <ul className="pricing-card__features">
                                         <li>
                                             <span className="pricing-card__feature-label">{t('roomsPage.deposit')}</span>
@@ -194,9 +225,10 @@ const Rooms = () => {
                                             <span className="pricing-card__feature-value">-</span>
                                         </li>
                                     </ul>
+
                                     <Link
                                         to="/booking"
-                                        className="btn btn-outline-gold pricing-card__btn"
+                                        className="btn btn-primary pricing-card__btn"
                                         state={{ roomType: 'daily' }}
                                         onClick={() => window.scrollTo(0, 0)}
                                     >

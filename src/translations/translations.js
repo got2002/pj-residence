@@ -145,14 +145,20 @@ const translations = {
             pricingDescription: 'เลือกแพ็คเกจที่เหมาะกับคุณ',
             popular: 'ยอดนิยม',
             monthly: 'รายเดือน',
+            popular: 'ยอดนิยม',
+            monthly: 'รายเดือน',
             daily: 'รายวัน',
+            rent: 'ค่าเช่า',
+            furnitureDeposit: 'ค่าประกันเฟอร์นิเจอร์',
             perMonth: 'บาท/เดือน',
             perNight: 'บาท/คืน',
             deposit: 'ค่าประกันห้อง',
             water: 'ค่าน้ำ',
             electricity: 'ค่าไฟ',
             minContract: 'สัญญาเช่าขั้นต่ำ',
+            minContract: 'สัญญาเช่าขั้นต่ำ',
             months: 'เดือน',
+            lessThanOneMonth: 'ไม่ถึง 1 เดือน',
             included: 'รวมในราคา',
             priceNote: '* ราคาอาจมีการเปลี่ยนแปลง กรุณาติดต่อสอบถามข้อมูลเพิ่มเติม',
             amenities: [
@@ -172,7 +178,8 @@ const translations = {
             facilities: [
                 { icon: '🍽️', title: 'ห้องอาหาร', description: 'รองรับได้กว่า 40 ที่นั่ง โปร่งสบาย สามารถปรับเปลี่ยนเป็นห้องประชุมได้' },
                 { icon: '📚', title: 'Living Room', description: 'พื้นที่พักผ่อนแบบสบายๆ เพลิดเพลินกับการอ่านหนังสือหลากสไตล์' },
-                { icon: '💻', title: 'Computer Zone', description: 'คอมพิวเตอร์ตั้งโต๊ะสำหรับทำงานหรือหาข้อมูลได้แบบไม่มีสะดุด' }
+                { icon: '💻', title: 'Computer Zone', description: 'คอมพิวเตอร์ตั้งโต๊ะสำหรับทำงานหรือหาข้อมูลได้แบบไม่มีสะดุด' },
+                { icon: '♿', title: 'รองรับผู้สูงอายุและผู้พิการ', description: 'มีสิ่งอำนวยความสะดวกสำหรับผู้สูงอายุและผู้พิการ รวมถึงทางลาดสำหรับรถเข็น' }
             ]
         },
         facilitiesPage: {
@@ -182,7 +189,7 @@ const translations = {
                 {
                     category: 'สิ่งอำนวยความสะดวกภายใน',
                     icon: '🏠',
-                    items: ['เฟอร์นิเจอร์ครบครัน', 'เครื่องปรับอากาศ', 'ทีวี', 'จานดาวเทียม', 'เครื่องทำน้ำอุ่น', 'ไมโครเวฟ', 'กาน้ำร้อน', 'ตู้เย็น', 'ที่ล้างจาน', 'ลิฟท์โดยสาร', 'ห้ามเลี้ยงสัตว์ทุกชนิด']
+                    items: ['เฟอร์นิเจอร์ครบครัน', 'เครื่องปรับอากาศ', 'ทีวี', 'จานดาวเทียม', 'เครื่องทำน้ำอุ่น', 'ไมโครเวฟ', 'กาน้ำร้อน', 'ตู้เย็น', 'ที่ล้างจาน', 'ลิฟท์โดยสาร', 'ห้ามเลี้ยงสัตว์ทุกชนิด', 'รองรับวีลแชร์', 'รองรับผู้สูงอายุและผู้พิการ']
                 },
                 {
                     category: 'สิ่งอำนวยความสะดวกภายนอก',
@@ -382,14 +389,20 @@ const translations = {
             pricingDescription: 'Choose the package that suits you',
             popular: 'Popular',
             monthly: 'Monthly',
+            popular: 'Popular',
+            monthly: 'Monthly',
             daily: 'Daily',
+            rent: 'Rent',
+            furnitureDeposit: 'Furniture Deposit',
             perMonth: 'THB/month',
             perNight: 'THB/night',
             deposit: 'Room Deposit',
             water: 'Water',
             electricity: 'Electricity',
             minContract: 'Minimum Contract',
+            minContract: 'Minimum Contract',
             months: 'months',
+            lessThanOneMonth: 'Less than 1 Month',
             included: 'Included',
             priceNote: '* Prices may change. Please contact for more information.',
             amenities: [
@@ -409,7 +422,8 @@ const translations = {
             facilities: [
                 { icon: '🍽️', title: 'Restaurant', description: 'Accommodates over 40 seats, spacious, can be converted to meeting room' },
                 { icon: '📚', title: 'Living Room', description: 'Relaxing area, enjoy reading various books' },
-                { icon: '💻', title: 'Computer Zone', description: 'Desktop computer for work or research' }
+                { icon: '💻', title: 'Computer Zone', description: 'Desktop computer for work or research' },
+                { icon: '♿', title: 'Elderly & Disabled Friendly', description: 'Facilities designed for elderly and disabled guests, including wheelchair ramps.' }
             ]
         },
         facilitiesPage: {
@@ -419,7 +433,7 @@ const translations = {
                 {
                     category: 'Indoor Facilities',
                     icon: '🏠',
-                    items: ['Fully Furnished', 'Air Conditioning', 'TV', 'Satellite TV', 'Water Heater', 'Microwave', 'Electric Kettle', 'Refrigerator', 'Sink', 'Elevator', 'No Pets Allowed']
+                    items: ['Fully Furnished', 'Air Conditioning', 'TV', 'Satellite TV', 'Water Heater', 'Microwave', 'Electric Kettle', 'Refrigerator', 'Sink', 'Elevator', 'No Pets Allowed', 'Wheelchair Accessible', 'Elderly & Disabled Friendly']
                 },
                 {
                     category: 'Outdoor Facilities',
@@ -619,14 +633,20 @@ const translations = {
             pricingDescription: '选择适合您的套餐',
             popular: '热门',
             monthly: '月租',
+            popular: '热门',
+            monthly: '月租',
             daily: '日租',
+            rent: '租金',
+            furnitureDeposit: '家具押金',
             perMonth: '泰铢/月',
             perNight: '泰铢/晚',
             deposit: '押金',
             water: '水费',
             electricity: '电费',
             minContract: '最短合同',
+            minContract: '最短合同',
             months: '个月',
+            lessThanOneMonth: '不满 1 个月',
             included: '已包含',
             priceNote: '* 价格可能会有变动，请联系我们获取更多信息。',
             amenities: [
@@ -646,7 +666,8 @@ const translations = {
             facilities: [
                 { icon: '🍽️', title: '餐厅', description: '可容纳40多个座位，宽敞舒适，可改为会议室' },
                 { icon: '📚', title: '休息室', description: '放松区域，享受阅读各种书籍' },
-                { icon: '💻', title: '电脑区', description: '台式电脑供工作或查找资料' }
+                { icon: '💻', title: '电脑区', description: '台式电脑供工作或查找资料' },
+                { icon: '♿', title: '适宜老人和残疾人', description: '专为老人和残疾人设计的设施，包括轮椅坡道。' }
             ]
         },
         facilitiesPage: {
@@ -656,7 +677,7 @@ const translations = {
                 {
                     category: '室内设施',
                     icon: '🏠',
-                    items: ['家具齐全', '空调', '电视', '卫星电视', '热水器', '微波炉', '电热水壶', '冰箱', '洗碗槽', '电梯', '禁止宠物']
+                    items: ['家具齐全', '空调', '电视', '卫星电视', '热水器', '微波炉', '电热水壶', '冰箱', '洗碗槽', '电梯', '禁止宠物', '轮椅通道', '适宜老人和残疾人']
                 },
                 {
                     category: '室外设施',

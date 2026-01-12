@@ -47,7 +47,10 @@ const DailyBooking = () => {
 
         // Step 4: Payment
         paymentMethod: 'bank_transfer',
-        agreeTerms: false
+        paymentMethod: 'bank_transfer',
+        agreeTerms: false,
+        isGovernment: false,
+        isGoogleReview: false
     });
 
     const roomTypes = {
@@ -70,7 +73,10 @@ const DailyBooking = () => {
                     { label: 'ทีวี' },
                     { label: 'เครื่องทำน้ำอุ่น' },
                     { label: 'ไมโครเวฟ' },
-                    { label: 'ตู้เย็น' }
+                    { label: 'ตู้เย็น' },
+                    { label: 'ลิฟต์' },
+                    { label: 'รองรับวีลแชร์' },
+                    { label: 'รองรับผู้สูงอายุและผู้พิการ' }
                 ]
             }
         ],
@@ -93,7 +99,10 @@ const DailyBooking = () => {
                     { label: 'TV' },
                     { label: 'Water Heater' },
                     { label: 'Microwave' },
-                    { label: 'Refrigerator' }
+                    { label: 'Refrigerator' },
+                    { label: 'Elevator' },
+                    { label: 'Wheelchair Accessible' },
+                    { label: 'Elderly & Disabled Friendly' }
                 ]
             }
         ],
@@ -116,7 +125,10 @@ const DailyBooking = () => {
                     { label: '电视' },
                     { label: '热水器' },
                     { label: '微波炉' },
-                    { label: '冰箱' }
+                    { label: '冰箱' },
+                    { label: '电梯' },
+                    { label: '轮椅通道' },
+                    { label: '适宜老人和残疾人' }
                 ]
             }
         ]
@@ -322,10 +334,10 @@ const DailyBooking = () => {
 
         let basePrice = selectedRoom?.price || 0;
 
-        // Overlay Government Price
-        if (formData.roomType === 'daily' && formData.isGovernment) {
-            basePrice = 680;
-        }
+        // Overlay Government Check (Removed auto-discount)
+        // if (formData.roomType === 'daily' && (formData.isGovernment || formData.isGoogleReview)) {
+        //    basePrice = 650;
+        // }
 
         let extraCost = 0;
 
@@ -427,23 +439,24 @@ const DailyBooking = () => {
                                                         <div className="booking-room-option__info">
                                                             <h4>{room.name}</h4>
                                                             <span className="booking-room-option__price">
-                                                                {formData.roomType === 'daily' && formData.isGovernment ? '680' : room.price.toLocaleString()} {room.priceUnit}
+                                                                {room.price.toLocaleString()} {room.priceUnit}
                                                             </span>
 
                                                             {/* Government Official Checkbox (Only for Daily) */}
                                                             {room.id === 'daily' && (
-                                                                <div className="gov-checkbox-wrapper" style={{ margin: '0.5rem 0', padding: '0.5rem', background: '#f0fdf4', borderRadius: '6px', border: '1px solid #bbf7d0' }}>
-                                                                    <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', fontSize: '0.9rem', color: '#166534', fontWeight: '600' }}>
-                                                                        <input
-                                                                            type="checkbox"
-                                                                            name="isGovernment"
-                                                                            checked={formData.isGovernment || false}
-                                                                            onChange={handleChange}
-                                                                        />
-                                                                        ข้าราชการ/รัฐวิสาหกิจ (680 บาท/คืน)
-                                                                        <span style={{ fontSize: '0.75rem', fontWeight: 'normal', color: '#15803d' }}>(*โปรดแสดงบัตร)</span>
-                                                                    </label>
-                                                                </div>
+                                                                <>
+                                                                    <div className="gov-checkbox-wrapper" style={{ margin: '0.5rem 0', padding: '0.5rem', background: '#f0fdf4', borderRadius: '6px', border: '1px solid #bbf7d0' }}>
+                                                                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#166534', fontWeight: '600' }}>
+                                                                            {language === 'th' ? 'ข้าราชการ/รัฐวิสาหกิจ (650 บาท/คืน)' : language === 'cn' ? '公务员/国企员工 (650 泰铢/晚)' : 'Gov. Official (650 THB/night)'}
+                                                                            <span style={{ fontSize: '0.75rem', fontWeight: 'normal', color: '#15803d' }}>{language === 'th' ? '(*โปรดแสดงบัตร)' : language === 'cn' ? '(*请出示证件)' : '(*Show ID)'}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className="google-review-wrapper" style={{ margin: '0.5rem 0', padding: '0.5rem', background: '#eff6ff', borderRadius: '6px', border: '1px solid #bfdbfe' }}>
+                                                                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#1e40af', fontWeight: '600' }}>
+                                                                            {language === 'th' ? 'รีวิว Google Map 5 ดาว (650 บาท/คืน)' : language === 'cn' ? '谷歌地图 5 星好评 (650 泰铢/晚)' : 'Google Map 5-Star Review (650 THB/night)'}
+                                                                        </div>
+                                                                    </div>
+                                                                </>
                                                             )}
 
                                                             {/* Pricing Section */}

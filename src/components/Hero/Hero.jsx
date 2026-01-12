@@ -11,11 +11,21 @@ const Hero = () => {
     const [isCustomGuests, setIsCustomGuests] = useState(false);
     const [isCustomRooms, setIsCustomRooms] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [isFirstLoad, setIsFirstLoad] = useState(true);
     const { t } = useLanguage();
     const navigate = useNavigate();
 
     const slides = t('hero.slides');
     const ctaLinks = ['/rooms', '/rooms', '/nearby'];
+
+    useEffect(() => {
+        // Remove immediate load class after initial render to allow normal transitions later
+        const timer = setTimeout(() => {
+            setIsFirstLoad(false);
+        }, 500); // Short delay to ensure LCP is captured
+
+        return () => clearTimeout(timer);
+    }, []);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -79,7 +89,7 @@ const Hero = () => {
                 {slides.map((slide, index) => (
                     <div
                         key={index}
-                        className={`hero__slide ${index === currentSlide ? 'hero__slide--active' : ''}`}
+                        className={`hero__slide ${index === currentSlide ? 'hero__slide--active' : ''} ${index === 0 && isFirstLoad ? 'hero__slide--immediate' : ''}`}
                     >
                         <div
                             className="hero__slide-overlay"

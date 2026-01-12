@@ -61,6 +61,13 @@
     transform: scale(1);
 }
 
+/* Forces immediate display for LCP (First Contentful Paint) without transition delay */
+.hero__slide--immediate {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    transition: none !important;
+}
+
 /* Content */
 .hero__content {
     position: relative;

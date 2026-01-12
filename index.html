@@ -31,79 +31,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap"
-    rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap"
-      rel="stylesheet">
-  </noscript>
-  <style>
-    body {
-      background-color: #1A1A1A;
-      margin: 0;
-      color: #C9A962;
-    }
-
-    .loading-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      width: 100%;
-      background-color: #1A1A1A;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 9999;
-    }
-
-    .loading-spinner {
-      width: 50px;
-      height: 50px;
-      border: 3px solid rgba(201, 169, 98, 0.3);
-      border-radius: 50%;
-      border-top-color: #C9A962;
-      animation: spin 1s ease-in-out infinite;
-      margin-bottom: 16px;
-    }
-
-    .loading-text {
-      color: #C9A962;
-      font-family: serif;
-      font-size: 1.125rem;
-      letter-spacing: 0.1em;
-      animation: pulse 1.5s ease-in-out infinite;
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 0.6;
-      }
-
-      50% {
-        opacity: 1;
-      }
-    }
-  </style>
+    rel="stylesheet">
   <title>PJ-Residence | Luxury Hotel</title>
 </head>
 
 <body>
-  <div id="root">
-    <div class="loading-container">
-      <div class="loading-spinner"></div>
-      <p class="loading-text">Loading...</p>
-    </div>
-  </div>
+  <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 

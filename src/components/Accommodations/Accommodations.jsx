@@ -5,7 +5,6 @@ import './Accommodations.css';
 const Accommodations = () => {
     const { t } = useLanguage();
     const rooms = t('accommodations.rooms');
-    const prices = ['฿4,500', '฿680'];
     const images = ['/images/gallery__placeholder.webp', '/images/gallery__placeholder1.webp'];
 
     return (
@@ -52,10 +51,27 @@ const Accommodations = () => {
                                         <span className="room-card__name-en">{room.nameEn}</span>
                                     </div>
                                     <div className="room-card__price">
-                                        <span className="room-card__price-value">{prices[index]}</span>
-                                        <span className="room-card__price-unit">{t('accommodations.perNight')}</span>
+                                        <span className="room-card__price-value">{room.price}</span>
+                                        <span className="room-card__price-unit">{t('accommodations.' + room.unit)}</span>
                                     </div>
                                 </div>
+
+                                {/* Special Badges for Daily Room */}
+                                {room.unit === 'perNight' && (
+                                    <div style={{ marginBottom: '1rem' }}>
+                                        <div className="gov-checkbox-wrapper">
+                                            <div className="gov-checkbox-content">
+                                                {t('accommodations.govOfficial')}
+                                                <span className="gov-checkbox-sub">{t('accommodations.govSub')}</span>
+                                            </div>
+                                        </div>
+                                        <div className="google-review-wrapper">
+                                            <div className="google-review-content">
+                                                {t('accommodations.googleReview')}
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
                                 <p className="room-card__description">{room.description}</p>
                                 <div className="room-card__details">
                                     <div className="room-card__detail">

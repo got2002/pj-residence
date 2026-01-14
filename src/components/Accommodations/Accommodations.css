@@ -253,3 +253,46 @@
         gap: var(--space-sm);
     }
 }
+
+/* Special Badges for Daily Room */
+.gov-checkbox-wrapper {
+    margin: 0.75rem 0 0.25rem;
+    padding: 0.6rem;
+    background: #f0fdf4;
+    border-radius: var(--radius-sm);
+    border: 1px solid #bbf7d0;
+}
+
+.gov-checkbox-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #166534;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.gov-checkbox-sub {
+    font-size: 0.7rem;
+    font-weight: normal;
+    color: #15803d;
+    margin-left: 4px;
+}
+
+.google-review-wrapper {
+    margin: 0.25rem 0 0.75rem;
+    padding: 0.6rem;
+    background: #eff6ff;
+    border-radius: var(--radius-sm);
+    border: 1px solid #bfdbfe;
+}
+
+.google-review-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #1e40af;
+    font-weight: 600;
+}

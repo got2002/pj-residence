@@ -1,36 +1,33 @@
-# Performance Optimization Implementation Plan
+# Fix Accommodation Prices
 
-This plan aims to improve the PageSpeed Insights score by addressing LCP (Largest Contentful Paint) and implementing code splitting.
+## Goal Description
+The accommodation prices displayed on the website are incorrect because they use a hardcoded "per night" label for all rooms, including the monthly room. The prices themselves are also hardcoded. The goal is to move pricing data into the translation files to support different units (e.g., "per month" vs "per night") and ensure correct labeling.
 
 ## User Review Required
 > [!NOTE]
-> This change introduces a `Loading` spinner that will appear briefly when navigating between pages due to code splitting.
+> I am assuming the current price values (4,500 THB and 680 THB) are numerically correct but labeled wrong. I will move them to the data source.
 
 ## Proposed Changes
+### src/translations
+#### [MODIFY] [translations.js](file:///c:/test_ai/pj-residence/src/translations/translations.js)
+- Add `govOfficial` and `googleReview` keys to `accommodations` section for all languages.
+    - th: govOfficial: 'ข้าราชการ/รัฐวิสาหกิจ (650 บาท/คืน)', govSub: '(*โปรดแสดงบัตร)', googleReview: 'รีวิว Google Map 5 ดาว (650 บาท/คืน)'
+    - cn: govOfficial: '公务员/国企员工 (650 泰铢/晚)', govSub: '(*请出示证件)', googleReview: '谷歌地图 5 星好评 (650 泰铢/晚)'
+    - en: govOfficial: 'Gov. Official (650 THB/night)', govSub: '(*Show ID)', googleReview: 'Google Map 5-Star Review (650 THB/night)'
 
-### Core Optimization
-#### [MODIFY] [index.html](file:///c:/test_ai/pj-residence/index.html)
-- Add `<link rel="preload" as="image" href="/images/hero-1.webp">` to the `<head>` to prioritize the Hero image loading (Fixes LCP).
+### src/components/Accommodations
+#### [MODIFY] [Accommodations.css](file:///c:/test_ai/pj-residence/src/components/Accommodations/Accommodations.css)
+- Add classes `.gov-checkbox-wrapper` and `.google-review-wrapper` with styles extracted from `Booking.jsx`.
 
-### Component Architecture
-#### [NEW] [Loading.jsx](file:///c:/test_ai/pj-residence/src/components/Loading/Loading.jsx)
-- Create a reusable loading spinner component for suspense fallbacks.
-
-#### [NEW] [Loading.css](file:///c:/test_ai/pj-residence/src/components/Loading/Loading.css)
-- Styling for the loading spinner.
-
-### Code Splitting
-#### [MODIFY] [App.jsx](file:///c:/test_ai/pj-residence/src/App.jsx)
-- Convert all page imports to `React.lazy` dynamic imports.
-- Wrap `<Routes>` with `<Suspense fallback={<Loading />}>`.
+#### [MODIFY] [Accommodations.jsx](file:///c:/test_ai/pj-residence/src/components/Accommodations/Accommodations.jsx)
+- Import `gov-checkbox-wrapper` and `google-review-wrapper` classes.
+- In `rooms.map`, check if `room.unit === 'perNight'` (or id='daily').
+- Render the badges below the price or description.
 
 ## Verification Plan
-
-### Automated Tests
-- Run `npm run build` to verify the build process creates split chunks (look for multiple `.js` files in `dist/assets`).
-- Run `npm run preview` to serve the production build locally.
-
 ### Manual Verification
-- **LCP Verify**: Open Network tab in DevTools, reload the page, and check that `hero-1.webp` is loaded with "High" priority or earlier in the waterfall.
-- **Code Splitting**: Navigate to different pages (e.g., /rooms, /contact) and verify that new JS chunks are requested in the Network tab.
-- **Loading State**: Verify the loading spinner appears briefly on slow connections (can simulate "Slow 3G" in DevTools).
+- Run the frontend.
+- Check the "Accommodations" section.
+- Verify "Daily Room" card shows the two new green/blue badges.
+- Verify "Monthly Room" card does NOT show them.
+- Switch languages to ensure correct text.

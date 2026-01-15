@@ -336,7 +336,7 @@ const DailyBooking = () => {
 
         // Overlay Government Check (Removed auto-discount)
         // if (formData.roomType === 'daily' && (formData.isGovernment || formData.isGoogleReview)) {
-        //    basePrice = 650;
+        //    basePrice = 680;
         // }
 
         let extraCost = 0;
@@ -447,13 +447,13 @@ const DailyBooking = () => {
                                                                 <>
                                                                     <div className="gov-checkbox-wrapper" style={{ margin: '0.5rem 0', padding: '0.5rem', background: '#f0fdf4', borderRadius: '6px', border: '1px solid #bbf7d0' }}>
                                                                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#166534', fontWeight: '600' }}>
-                                                                            {language === 'th' ? 'ข้าราชการ/รัฐวิสาหกิจ (650 บาท/คืน)' : language === 'cn' ? '公务员/国企员工 (650 泰铢/晚)' : 'Gov. Official (650 THB/night)'}
+                                                                            {language === 'th' ? 'ข้าราชการ/รัฐวิสาหกิจ (680 บาท/คืน)' : language === 'cn' ? '公务员/国企员工 (680 泰铢/晚)' : 'Gov. Official (680 THB/night)'}
                                                                             <span style={{ fontSize: '0.75rem', fontWeight: 'normal', color: '#15803d' }}>{language === 'th' ? '(*โปรดแสดงบัตร)' : language === 'cn' ? '(*请出示证件)' : '(*Show ID)'}</span>
                                                                         </div>
                                                                     </div>
                                                                     <div className="google-review-wrapper" style={{ margin: '0.5rem 0', padding: '0.5rem', background: '#eff6ff', borderRadius: '6px', border: '1px solid #bfdbfe' }}>
                                                                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#1e40af', fontWeight: '600' }}>
-                                                                            {language === 'th' ? 'รีวิว Google Map 5 ดาว (650 บาท/คืน)' : language === 'cn' ? '谷歌地图 5 星好评 (650 泰铢/晚)' : 'Google Map 5-Star Review (650 THB/night)'}
+                                                                            {language === 'th' ? 'รีวิว Google Map 5 ดาว (680 บาท/คืน)' : language === 'cn' ? '谷歌地图 5 星好评 (680 泰铢/晚)' : 'Google Map 5-Star Review (680 THB/night)'}
                                                                         </div>
                                                                     </div>
                                                                 </>

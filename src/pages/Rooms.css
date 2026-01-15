@@ -117,8 +117,29 @@
 .rooms-details__wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-4xl);
+    grid-template-areas:
+        "intro gallery"
+        "lists gallery";
+    column-gap: var(--space-4xl);
+    row-gap: var(--space-lg);
     align-items: start;
+}
+
+.rooms-details__intro {
+    grid-area: intro;
+}
+
+.rooms-details__lists {
+    grid-area: lists;
+}
+
+.rooms-details__gallery {
+    grid-area: gallery;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    position: sticky;
+    top: 100px;
 }
 
 .rooms-details__text {
@@ -135,14 +156,6 @@
 }
 
 /* Gallery - Luxury Style */
-.rooms-details__gallery {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
-    position: sticky;
-    top: 100px;
-}
-
 .rooms-details__main-image {
     position: relative;
     height: 480px;
@@ -245,7 +258,7 @@
     font-size: 1.25rem;
     font-weight: 300;
     color: #2a2a2a;
-    margin-top: var(--space-2xl);
+    margin-top: 0;
     margin-bottom: var(--space-lg);
     letter-spacing: 0.05em;
     position: relative;
@@ -331,7 +344,7 @@
 /* Common Facilities - Luxury Text-Only Style */
 .rooms-facilities__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--space-xl);
     background: transparent;
     border: none;
@@ -568,16 +581,30 @@
 
 /* Responsive */
 
-
 @media (max-width: 992px) {
     .rooms-details__wrapper {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xl);
+    }
+
+    .rooms-details__intro {
+        order: 1;
     }
 
     .rooms-details__gallery {
-        order: -1;
+        order: 2;
         position: relative;
         top: 0;
+    }
+
+    .rooms-details__lists {
+        order: 3;
+    }
+
+    .rooms-details__layout-wrapper {
+        display: flex;
+        justify-content: center;
     }
 
     .rooms-facilities__grid {
@@ -616,8 +643,6 @@
     .rooms-hero__title {
         font-size: 2rem;
     }
-
-
 
     .rooms-facilities__grid {
         grid-template-columns: 1fr;
